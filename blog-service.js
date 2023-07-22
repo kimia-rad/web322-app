@@ -55,7 +55,7 @@ module.exports.getAllPosts = function(){
                 resolve(posts);
             }
         })
-        .catch(error => {
+        .catch(err => {
             console.error('Error retrieving all posts:', err);
             reject('Unable to get all posts.');
         });
@@ -75,7 +75,7 @@ module.exports.getPostsByCategory = function(category){
                 resolve(posts);
             }
         })
-        .catch(error => {
+        .catch(err => {
             console.error('Error retrieving all posts:', err);
             reject('Unable to get all posts.');
         });
@@ -100,7 +100,7 @@ module.exports.getPostsByMinDate = function(minDateStr) {
                 resolve(posts);
             }
         })
-        .catch(error => {
+        .catch(err => {
             console.error('Error retrieving all posts:', err);
             reject('Unable to get all posts.');
         });
@@ -120,7 +120,7 @@ module.exports.getPostById = function(id){
                 resolve(posts);
             }
         })
-        .catch(error => {
+        .catch(err => {
             console.error('Error retrieving all posts:', err);
             reject('Unable to get all posts.');
         });
