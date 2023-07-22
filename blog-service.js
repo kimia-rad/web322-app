@@ -42,7 +42,7 @@ module.exports.initialize = function () {
             })
             .catch(err=>reject('Unable to sync the database.'));
     });
-}
+};
 
 module.exports.getAllPosts = function(){
     return new Promise((resolve, reject) => {
@@ -60,7 +60,7 @@ module.exports.getAllPosts = function(){
             reject('Unable to get all posts.');
         });
     });
-}
+};
 
 module.exports.getPostsByCategory = function(category){
     return new Promise((resolve, reject) => {
@@ -80,7 +80,7 @@ module.exports.getPostsByCategory = function(category){
             reject('Unable to get all posts.');
         });
     });
-}
+};
 
 module.exports.getPostsByMinDate = function(minDateStr) {
     return new Promise((resolve, reject) => {
@@ -105,7 +105,7 @@ module.exports.getPostsByMinDate = function(minDateStr) {
             reject('Unable to get all posts.');
         });
     });
-}
+};
 
 module.exports.getPostById = function(id){
     return new Promise((resolve, reject) => {
@@ -125,7 +125,7 @@ module.exports.getPostById = function(id){
             reject('Unable to get all posts.');
         });
     });
-}
+};
 
 module.exports.addPost = function(postData){
     return new Promise((resolve, reject) => {
@@ -147,7 +147,7 @@ module.exports.addPost = function(postData){
               reject('Unable to create post.');
             });
         });
-}
+};
 
 module.exports.getPublishedPosts = function(){
     return new Promise((resolve, reject) => {
@@ -162,11 +162,11 @@ module.exports.getPublishedPosts = function(){
               }
             })
             .catch((err) => {
-              console.error('Error retrieving published posts:', err);
+              console.error('Error retrieving published posts', err);
               reject('Unable to get published posts.');
             });
         });
-}
+};
 
 module.exports.getPublishedPostsByCategory = function(category){
     return new Promise((resolve, reject) => {
@@ -186,7 +186,7 @@ module.exports.getPublishedPostsByCategory = function(category){
         reject('Unable to get published posts by category.');
         });
     });
-}
+};
 
 module.exports.getCategories = function(){
     return new Promise((resolve, reject) => {
@@ -203,7 +203,7 @@ module.exports.getCategories = function(){
         reject('Unable to get categories.');
       });
   });
-}
+};
 
 module.exports.addCategory = function(categoryData){
     return new Promise((resolve, reject)=>{
@@ -216,14 +216,14 @@ module.exports.addCategory = function(categoryData){
         Category.create(categoryData)
         .then(()=> {
             console.log('the operation was a success');
-            resolve(categoryData);
+            resolve();
         })
         .catch((err)=>{
             console.error(`Error adding category`, err);
             reject('Unable to create category');
         });
     });
-}
+};
 
 module.exports.deleteCategoryById= function(id){
     return new Promise ((resolve,reject)=> {
@@ -243,7 +243,8 @@ module.exports.deleteCategoryById= function(id){
             reject ('Unable to delete category.');
         });
         });
-}
+};
+
 module.exports.deletePostById = function(id){
     return new Promise ((resolve,reject)=> {
         Post.destroy({
@@ -262,4 +263,4 @@ module.exports.deletePostById = function(id){
             reject ('Unable to delete post.');
         });
         });
-}
+};
