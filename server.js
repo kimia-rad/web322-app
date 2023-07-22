@@ -283,7 +283,13 @@ app.get('/categories', (req, res) => {
 });
 
 app.get('/categories/add',(req, res) => {
-    res.render("addCategory");
+    blogData.getCategories()
+        .then(categories => {
+            res.render("addCategory", { categories: categories });
+        })
+        .catch(err => {
+            res.render("addCategory", { categories: [] });
+        });
 });
 
 app.post('/categories/add', (req, res)=>{
