@@ -294,7 +294,7 @@ app.get('/categories/add',(req, res) => {
 
 app.post('/categories/add', (req, res)=>{
     blogData.addCategory(req.body)
-    .then(category =>{
+    .then(() =>{
         res.redirect("/categories");
     }).catch(err=>{
         res.status(500).send(err);
