@@ -13,7 +13,7 @@ var sequelize = new Sequelize('ehdroisi', 'ehdroisi', '0k2_0Hum2LQAKLQoaNBOyDNYq
 
 var Post= sequelize.define( 'Post' , {
     body: Sequelize.TEXT,
-    title: Sequelize.STRING,
+    tite: Sequelize.STRING,
     postDate: Sequelize.DATE,
     featureImage: Sequelize.STRING,
     published: Sequelize.BOOLEAN
@@ -120,7 +120,7 @@ module.exports.getPostById = function(id){
                 resolve(posts);
             }
         })
-        .catch(err => {
+        .catch(error => {
             console.error('Error retrieving all posts:', err);
             reject('Unable to get all posts.');
         });
