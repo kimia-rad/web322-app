@@ -13,7 +13,7 @@ var sequelize = new Sequelize('ehdroisi', 'ehdroisi', '0k2_0Hum2LQAKLQoaNBOyDNYq
 
 var Post= sequelize.define( 'Post' , {
     body: Sequelize.TEXT,
-    tite: Sequelize.STRING,
+    title: Sequelize.STRING,
     postDate: Sequelize.DATE,
     featureImage: Sequelize.STRING,
     published: Sequelize.BOOLEAN
