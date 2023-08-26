@@ -1,14 +1,3 @@
-/********************************************************************************* 
- * * WEB322 – Assignment 05 *
- *  I declare that this assignment is my own work in accordance with Seneca Academic Policy.
- *  No part of this * assignment has been copied manually or electronically from any other source (including web sites) or 
- * * distributed to other students. * 
- * * Name: Kimia abbas rad 
- *   Student ID: 167946219 
- *   Date: 21 July * 
- * * Cyclic Web App URL: https://amused-jumpsuit-ox.cyclic.app/ * 
- * * GitHub Repository URL: https://github.com/kimia-rad/web322-app
- * * ********************************************************************************/
 
 const express = require('express');
 const blogData = require("./blog-service");
